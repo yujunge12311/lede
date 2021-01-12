@@ -7,14 +7,14 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: EA8500
+name: EA8500-1
 
 on:
   push:
     branches: 
       - master
-  schedule:
-      - cron: 0 03 * * *
+  # schedule:
+  #   - cron: 0 20 * * *
   release:
     types: [published]
 
@@ -76,6 +76,9 @@ jobs:
           CONFIG_TARGET_ipq806x=y
           CONFIG_TARGET_ipq806x_generic=y
           CONFIG_TARGET_ipq806x_generic_DEVICE_linksys_ea8500=y
+          EOF
+    
+          cat >> .config <<EOF
           CONFIG_GNUTLS_ALPN=y
           CONFIG_GNUTLS_ANON=y
           CONFIG_GNUTLS_DTLS_SRTP=y
