@@ -7,14 +7,14 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: EA8500-1
+name: EA8500-正式版
 
 on:
   push:
     branches: 
       - master
-  # schedule:
-  #   - cron: 0 20 * * *
+  schedule:
+    - cron: 0 03 * *
   release:
     types: [published]
 
